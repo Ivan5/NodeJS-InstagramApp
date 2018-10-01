@@ -1,2 +1,30 @@
-<h1>Profile</h1>
-
+<%- layout('layouts/main') %>
+<div class="container">
+  <div class="row p-2">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="<%= user.profile_picture %>" alt="" class="card-img-top">
+        <div class="card-body text-center">
+            <h5 class="card-title"><%= user.full_name %></h5>
+            <p>
+               <i class="far fa-user"></i> <%= user.username %> 
+            </p>
+           <p>
+               <i class="far fa-pen"></i>
+               <%= user.bio %>
+           </p>
+           <hr>
+           <p><i class="fas fa-camera-retro"></i> <%= user.counts.media %></p> 
+           <p><i class="fas fa-heart"></i> <%= user.counts.follows %> </p>
+           <p><i class="fas fa-users"></i> <%= user.counts.followed_by %></p>
+        </div>
+        <div class="card-footer">
+          <a href="<%= user.website %>" class="btn btn-success btn-block" target="_blank">Website</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      
+    </div> 
+  </div>
+</div>
