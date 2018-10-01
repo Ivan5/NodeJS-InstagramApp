@@ -42,7 +42,9 @@ router.get('/login',(req,res) => {
 });
 
 router.get('/logout',(req,res) => {
-
+  delete req.session.access_token;
+  delete req.session.user_id;
+  res.redirect('/');
 });
 
 router.get('/profile', async (req,res) => {
